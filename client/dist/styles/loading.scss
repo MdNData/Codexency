@@ -1,0 +1,75 @@
+// Variables
+$loading-width: 120px;
+$transition-duration: 800ms;
+
+// Animation keyframes (spostate fuori dal selettore per migliore compatibilità)
+@keyframes loading-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Main styles
+#first-loading-container {
+  --loader-size: #{$loading-width};
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: #dba04d;
+  display: grid;
+  place-items: center;
+  transition: opacity $transition-duration var(--transition-timing);
+  pointer-events: none;
+
+  // Stato iniziale nascosto per FOUC prevention
+  &[data-hidden] {
+    opacity: 0;
+  }
+
+  .loading {
+    display: grid;
+    gap: 30px;
+    justify-items: center;
+
+    .loader {
+      width: var(--loader-size);
+      height: var(--loader-size);
+      position: relative;
+      animation: loading-rotate 1.2s linear infinite;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+      }
+
+      &::after {
+        box-shadow: 0 2px 0 #ffffff inset;
+      }
+    }
+
+    p {
+      color: #eff0f2;
+      font: 500 20px/1.5 Karla, sans-serif;
+      margin: 0;
+      opacity: 0;
+      animation: loading-text-fade 1s ease-out forwards;
+    }
+  }
+}
+
+@keyframes loading-text-fade {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+// Reduced motion media query
+@media (prefers-reduced-motion: reduce) {
+  .loader {
+    animation-duration: 2.4s !important;
+  }
+}
