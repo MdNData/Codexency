@@ -1,0 +1,26 @@
+.logo {
+  a {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-wrap: nowrap;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 50px;
+    }
+
+    span {
+      font-family: Urbanist;
+      margin-left: 5px;
+      font-size: 24px;
+      font-style: italic;
+      letter-spacing: -1px;
+      font-weight: 600;
+      color: #041c4c;
+    }
+  }
+}

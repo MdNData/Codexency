@@ -10,7 +10,7 @@
   --loader-size: 120px;
   --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
   position: fixed;
-  z-index: 1000;
+  z-index: 10000;
   inset: 0;
   background: #dba04d;
   display: grid;

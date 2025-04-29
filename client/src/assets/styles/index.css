@@ -3,4 +3,66 @@
   padding: 0;
   box-sizing: border-box;
   border: 0;
+}
+
+body main {
+  padding-top: 70px;
+}
+body a {
+  text-decoration: none;
+  color: black;
+}
+
+div.nav-container {
+  position: fixed;
+  display: flex;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  z-index: 9999;
+}
+div.nav-container nav.navbar {
+  display: grid;
+  grid-template-areas: "logo access cart menu";
+  grid-template-columns: 1fr 50px 50px 50px;
+  width: 100vw;
+  align-items: center;
+  padding: 0 15px;
+}
+@media screen and (min-width: 800px) {
+  div.nav-container nav.navbar {
+    display: grid;
+    grid-template-areas: "logo menu cart access";
+    grid-template-columns: 190px 1fr 50px auto;
+    height: 70px;
+    overflow: hidden;
+    align-items: center;
+    width: 100vw;
+    padding: 0 15px;
+  }
+}
+div.nav-container nav.navbar .logo a {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+div.nav-container nav.navbar .logo a img {
+  height: 50px;
+}
+div.nav-container nav.navbar .logo a span {
+  font-family: Urbanist;
+  margin-left: 5px;
+  font-size: 24px;
+  font-style: italic;
+  letter-spacing: -1px;
+  font-weight: 600;
+  color: #041c4c;
 }/*# sourceMappingURL=index.css.map */
