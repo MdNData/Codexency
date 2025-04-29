@@ -1,4 +1,3 @@
-// AppContext.jsx
 import { createContext, useContext } from "react";
 import useDetectScreenSize from "./assets/hooks/useDetectScreenSize";
 
