@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <div className="nav-container">
       <nav className="navbar">
-        <Logo isMenuOpen setIsMenuOpen />
+        <Logo isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </nav>
     </div>
   );
