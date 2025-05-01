@@ -19,7 +19,7 @@ const AccountButton = ({ screenSize }) => {
     clearHideTimer();
     hideTimer.current = setTimeout(() => {
       setIsOnAccount(false);
-    }, 800);
+    }, 600); 
   };
 
   useEffect(() => {
@@ -56,11 +56,11 @@ const AccountButton = ({ screenSize }) => {
 
       {screenSize.width > 799 && (
         <div
-          className={isOnAccount ? "account-menu" : "account-menu hidden"}
+          className={`account-menu ${isOnAccount ? "visible" : "hidden"}`}
           onMouseEnter={clearHideTimer}
           onMouseLeave={startHideTimer}
         >
-          <BiSolidUpArrow />
+          <BiSolidUpArrow className="up-arrow" />
         </div>
       )}
     </div>
