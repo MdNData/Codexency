@@ -11,7 +11,7 @@ div.nav-container {
 
   nav.navbar {
     display: grid;
-    grid-template-areas: "logo access cart menu";
+    grid-template-areas: "logo cart menu access";
     grid-template-columns: 1fr 50px 50px 50px;
     width: 100vw;
     align-items: center;

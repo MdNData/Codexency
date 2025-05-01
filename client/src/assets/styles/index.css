@@ -26,7 +26,7 @@ div.nav-container {
 }
 div.nav-container nav.navbar {
   display: grid;
-  grid-template-areas: "logo access cart menu";
+  grid-template-areas: "logo cart menu access";
   grid-template-columns: 1fr 50px 50px 50px;
   width: 100vw;
   align-items: center;
@@ -50,7 +50,6 @@ div.nav-container nav.navbar .logo a {
   cursor: pointer;
   flex-wrap: nowrap;
   text-decoration: none;
-  justify-content: center;
   align-items: center;
 }
 div.nav-container nav.navbar .logo a img {
@@ -70,6 +69,7 @@ div.nav-container nav.navbar div.account-button {
   grid-area: access;
   border-radius: 9999px;
   transition: all 300ms;
+  margin-top: 0px;
 }
 div.nav-container nav.navbar div.account-button a {
   display: flex;
@@ -83,6 +83,7 @@ div.nav-container nav.navbar div.account-button a {
   padding: 5px 10px;
   border-radius: 50px;
   padding-top: 3px;
+  margin-top: 2px;
 }
 div.nav-container nav.navbar div.account-button a:hover {
   color: #041c4c;

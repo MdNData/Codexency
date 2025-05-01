@@ -3,6 +3,7 @@ div.account-button {
   grid-area: access;
   border-radius: 9999px;
   transition: all 300ms;
+  margin-top: 0px;
 
   a {
     display: flex;
@@ -16,6 +17,7 @@ div.account-button {
     padding: 5px 10px;
     border-radius: 50px;
     padding-top: 3px;
+    margin-top: 2px;
 
     &:hover {
       color: $main-color;
