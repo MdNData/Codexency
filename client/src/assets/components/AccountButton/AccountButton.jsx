@@ -19,7 +19,12 @@ const AccountButton = ({ screenSize }) => {
     clearHideTimer();
     hideTimer.current = setTimeout(() => {
       setIsOnAccount(false);
-    }, 600); 
+    }, 600);
+  };
+
+  const handleLinkClick = () => {
+    clearHideTimer();
+    setIsOnAccount(false);
   };
 
   useEffect(() => {
@@ -62,15 +67,33 @@ const AccountButton = ({ screenSize }) => {
         >
           <BiSolidUpArrow className="up-arrow" />
           <p>Buna Dragos!</p>
-          <a href="/">Cursurile mele</a>
-          <a href="/">Comenzile mele</a>
-          <a href="/">Contul meu</a>
-          <a href="/">Vouchere</a>
-          <a href="/">Retururile mele</a>
-          <a href="/">Review-urile mele</a>
-          <a href="/">Adrese de livrare</a>
-          <a href="/">Date facturare</a>
-          <a href="/">Log out</a>
+          <Link href="/" onClick={handleLinkClick}>
+            Cursurile mele
+          </Link>
+          <Link href="/" onClick={handleLinkClick}>
+            Comenzile mele
+          </Link>
+          <Link href="/" onClick={handleLinkClick}>
+            Contul meu
+          </Link>
+          <Link href="/" onClick={handleLinkClick}>
+            Vouchere
+          </Link>
+          <Link href="/" onClick={handleLinkClick}>
+            Retururile mele
+          </Link>
+          <Link href="/" onClick={handleLinkClick}>
+            Review-urile mele
+          </Link>
+          <Link href="/" onClick={handleLinkClick}>
+            Adrese de livrare
+          </Link>
+          <Link href="/" onClick={handleLinkClick}>
+            Date facturare
+          </Link>
+          <Link href="/" onClick={handleLinkClick}>
+            Log out
+          </Link>
         </div>
       )}
     </div>
