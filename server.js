@@ -42,7 +42,7 @@ app.use("*", (req, res) => {
   res.status(404);
 });
 
-const port = process.env.PORT || 5100;
+const port = process.env.PORT || 5101;
 
 //Run the server
 try {

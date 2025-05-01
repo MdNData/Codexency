@@ -65,4 +65,57 @@ div.nav-container nav.navbar .logo a span {
   letter-spacing: -1px;
   font-weight: 600;
   color: #041c4c;
+}
+div.nav-container nav.navbar div.account-button {
+  grid-area: access;
+}
+@media screen and (min-width: 800px) {
+  div.nav-container nav.navbar div.account-button {
+    border-radius: 9999px;
+    transition: all 300ms;
+  }
+  div.nav-container nav.navbar div.account-button a {
+    display: flex;
+    text-decoration: none;
+    color: #041c4c;
+    font-size: 25px;
+    margin: auto;
+    margin-top: -3px;
+    font-weight: 400;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 50px;
+    padding-top: 3px;
+  }
+  div.nav-container nav.navbar div.account-button a:hover {
+    color: #041c4c;
+    background-color: white;
+  }
+  div.nav-container nav.navbar div.account-button a span {
+    font-size: 17px;
+    font-family: Mulish;
+    margin-left: 5px;
+  }
+}
+div.nav-container nav.navbar div.account-button .account-menu.hidden {
+  display: none;
+}
+div.nav-container nav.navbar div.account-button .account-menu {
+  display: block;
+  position: absolute;
+  width: 200px;
+  margin-left: -65px;
+  margin-top: 15px;
+  border-radius: 8px;
+  height: 300px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.123);
+  background-color: #041c4c;
+  color: white;
+}
+div.nav-container nav.navbar div.account-button .account-menu svg {
+  position: absolute;
+  color: #041c4c;
+  margin-top: -18px;
+  right: 15px;
+  font-size: 25px;
 }/*# sourceMappingURL=index.css.map */
