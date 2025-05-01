@@ -24,8 +24,6 @@ div.account-button {
     font-weight: 400;
     align-items: end;
     padding: 0px 10px;
-    padding-top: 3px;
-    margin-top: 2px;
     font-family: Mulish;
 
     svg {
@@ -65,7 +63,7 @@ div.account-button {
 
     a {
       padding: 10px;
-    font-size: 14px;
+      font-size: 14px;
     }
 
     &.visible {
