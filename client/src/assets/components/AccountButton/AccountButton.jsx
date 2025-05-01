@@ -51,7 +51,7 @@ const AccountButton = ({ screenSize }) => {
     >
       <Link>
         <FiUser />
-        {screenSize.width > 799 ? <span>My Account</span> : null}
+        {screenSize.width > 799 ? <span>Contul meu</span> : null}
       </Link>
 
       {screenSize.width > 799 && (
@@ -61,6 +61,16 @@ const AccountButton = ({ screenSize }) => {
           onMouseLeave={startHideTimer}
         >
           <BiSolidUpArrow className="up-arrow" />
+          <p>Buna Dragos!</p>
+          <a href="/">Cursurile mele</a>
+          <a href="/">Comenzile mele</a>
+          <a href="/">Contul meu</a>
+          <a href="/">Vouchere</a>
+          <a href="/">Retururile mele</a>
+          <a href="/">Review-urile mele</a>
+          <a href="/">Adrese de livrare</a>
+          <a href="/">Date facturare</a>
+          <a href="/">Log out</a>
         </div>
       )}
     </div>
