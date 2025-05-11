@@ -25,16 +25,16 @@ const NavBar = () => {
           name="Codexency"
         />
         <CartButton />
-        {!user ? (
+        {user ? (
           <AccountButton screenSize={screenSize} />
         ) : (
           <AccessButton screenSize={screenSize} />
         )}
-        {screenSize.width < 960 ? (
+        {screenSize.width < 1000 ? (
           <MenuButton isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         ) : null}
         <Menu
-          isMenuOpen={screenSize.width < 960 ? isMenuOpen : true}
+          isMenuOpen={screenSize.width < 1000 ? isMenuOpen : true}
           setIsMenuOpen={setIsMenuOpen}
           screenSize={screenSize}
         />

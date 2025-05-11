@@ -56,10 +56,10 @@ const AccountButton = ({ screenSize }) => {
     >
       <Link>
         <FiUser />
-        {screenSize.width > 959 ? <span>Contul meu</span> : null}
+        {screenSize.width > 999 ? <span>Contul meu</span> : null}
       </Link>
 
-      {screenSize.width > 959 && (
+      {screenSize.width > 999 && (
         <div
           className={`account-menu ${isOnAccount ? "visible" : "hidden"}`}
           onMouseEnter={clearHideTimer}

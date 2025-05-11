@@ -13,7 +13,7 @@
       }
     }
   
-    @media screen and (max-width: 959px) {
+    @media screen and (max-width: 999px) {
       position: absolute;
       background-color: rgba(0, 0, 0, 0.7);
       top: 70px;
@@ -22,7 +22,7 @@
       width: 100%;
     }
   
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 1000px) {
       position: relative;
       top: 0;
       width: auto;
@@ -31,7 +31,7 @@
     }
   
     ul {
-      @media screen and (max-width: 959px) {
+      @media screen and (max-width: 999px) {
         transition: all linear 0.2s;
         display: inline-block;
         background-color: #fff;
@@ -46,7 +46,7 @@
       }
   
       li {
-        @media screen and (max-width: 959px) {
+        @media screen and (max-width: 999px) {
           display: block;
           border-bottom: 1px solid #d8d9dc;
           cursor: pointer;
@@ -109,7 +109,7 @@
           position: relative;
           font-size: 17px;
   
-          @media screen and (min-width: 960px) {
+          @media screen and (min-width: 1000px) {
             &:hover {
               color: rgb(219, 160, 77);
             }
@@ -142,7 +142,7 @@
           }
         }
   
-        @media screen and (min-width: 960px) {
+        @media screen and (min-width: 1000px) {
           a {
             margin: 0 0.8vw;
             padding: 0;

@@ -18,7 +18,7 @@ div.nav-container {
     justify-items: center;
     padding: 0 15px;
 
-    @media screen and (min-width: 960px) {
+    @media screen and (min-width: 1000px) {
       display: grid;
       grid-template-areas: "logo menu cart access";
       grid-template-columns: 190px 1fr 50px auto;

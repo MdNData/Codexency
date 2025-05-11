@@ -7,7 +7,7 @@ const AccessButton = ({ screenSize }) => {
     <div className="access-button">
       <Link to={"/"}>
         <FiUser />
-        {screenSize.width > 960 ? <span>Intra in cont</span> : ""}
+        {screenSize.width > 1000 ? <span>Intra in cont</span> : ""}
       </Link>
     </div>
   );
