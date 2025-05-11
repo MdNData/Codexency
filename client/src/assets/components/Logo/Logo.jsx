@@ -1,13 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../imgs/favicon/favicon.svg";
 
-const Logo = ({ isMenuOpen, setIsMenuOpen = () => {} }) => {
+const Logo = ({
+  isMenuOpen,
+  setIsMenuOpen = () => {},
+  title = "",
+  img = "",
+  alt = "",
+  name = "",
+}) => {
   return (
-    <div className="logo" title="Codexency Home">
+    <div className="logo" title={title}>
       <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
-        <img src={logo} alt="Codexency logo" />
-        <span>Codexency</span>
+        <img src={img} alt={alt} />
+        <span>{name}</span>
       </NavLink>
     </div>
   );

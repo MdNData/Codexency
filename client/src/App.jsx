@@ -2,13 +2,14 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./assets/pages/router";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AuthProvider from "./assets/utils/AuthContext";
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <RouterProvider router={router} />
       <ToastContainer
-        position="bottom-right"
+        position="top-left"
         autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
@@ -19,7 +20,7 @@ function App() {
         pauseOnHover
         theme="colored"
       />
-    </>
+    </AuthProvider>
   );
 }
 

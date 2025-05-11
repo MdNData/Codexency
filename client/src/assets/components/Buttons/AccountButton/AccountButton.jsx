@@ -56,10 +56,10 @@ const AccountButton = ({ screenSize }) => {
     >
       <Link>
         <FiUser />
-        {screenSize.width > 799 ? <span>Contul meu</span> : null}
+        {screenSize.width > 959 ? <span>Contul meu</span> : null}
       </Link>
 
-      {screenSize.width > 799 && (
+      {screenSize.width > 959 && (
         <div
           className={`account-menu ${isOnAccount ? "visible" : "hidden"}`}
           onMouseEnter={clearHideTimer}
@@ -90,6 +90,12 @@ const AccountButton = ({ screenSize }) => {
           </Link>
           <Link href="/" onClick={handleLinkClick}>
             Date facturare
+          </Link>
+          <Link to="/cont#facturi" onClick={handleLinkClick}>
+            Facturile mele
+          </Link>
+          <Link to="/cont" onClick={handleLinkClick}>
+            Diplomele mele
           </Link>
           <Link href="/" onClick={handleLinkClick}>
             Log out

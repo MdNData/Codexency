@@ -31,7 +31,7 @@ div.account-button {
     }
 
     &:hover {
-      color: $main-color;
+      color: $main-color-75t;
       background-color: white;
     }
 
@@ -39,6 +39,30 @@ div.account-button {
       font-size: 17px;
       font-family: Mulish;
       margin-left: 5px;
+    }
+
+    @media screen and (max-width: 960px) {
+      & {
+        display: block;
+        text-align: center;
+        color: $main-color;
+        font-size: 25px;
+        font-weight: 400;
+        width: 40px;
+        height: 40px;
+        padding-top: 5px;
+        border: 1px solid white;
+        border-radius: 1000px;
+      }
+
+      svg {
+        margin-left: -3.5px;
+      }
+
+      &:hover {
+        color: $hover-color;
+        border-radius: 1000px;
+      }
     }
   }
 
