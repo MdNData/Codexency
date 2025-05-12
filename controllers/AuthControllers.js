@@ -1,7 +1,7 @@
 import User from "../models/UserModel.js";
 import { sendWelcomeEmail } from "../utils/emailUtils.js";
 import { hashPassword } from "../utils/passwordUtils.js";
-import { createJWT } from "../utils/tokenUtils.js";
+import { createJWT, verifyJWT } from "../utils/tokenUtils.js";
 import { StatusCodes } from "http-status-codes";
 
 export const register = async (req, res) => {
@@ -21,7 +21,7 @@ export const register = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      expires: new Date(Date.now() + oneDay * 30),
+      expires: new Date(Date.now() + oneDay),
       secure: process.env.NODE_ENV === "production",
     });
 
@@ -38,4 +38,10 @@ export const register = async (req, res) => {
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .json({ msg: "Eroare la înregistrarea utilizatorului" });
   }
+};
+
+export const verifyLogin = (req, res) => {
+  const token = req.cookies.token;
+  const decoded = verifyJWT(token);
+  res.status(StatusCodes.OK).json({ user: decoded });
 };

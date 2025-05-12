@@ -2,7 +2,8 @@ import { Router } from "express";
 const router = Router();
 import rateLimiter from "express-rate-limit";
 import { validateUserRegistration } from "../middlewares/validationMiddleware.js";
-import { register } from "../controllers/AuthControllers.js";
+import { register, verifyLogin } from "../controllers/AuthControllers.js";
+import { authenticateUser } from "../middlewares/authMiddleware.js";
 
 const apiLimiter = rateLimiter({
   windowMs: 15 * 60 * 1000,
@@ -13,5 +14,7 @@ const apiLimiter = rateLimiter({
 });
 
 router.post("/register", apiLimiter, validateUserRegistration, register);
+
+router.get("/verify", authenticateUser, verifyLogin);
 
 export default router;

@@ -3,7 +3,6 @@ import React from "react";
 const OnOffCheck = ({ name, label, value, setValue }) => {
   const handleToggle = () => {
     setValue(!value);
-    console.log(value);
   };
 
   return (
