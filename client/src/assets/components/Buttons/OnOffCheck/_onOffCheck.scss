@@ -1,0 +1,52 @@
+.onoff-check {
+    max-width: 350px;
+    margin: 20px auto;
+  
+    .toggle-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: Mulish;
+      font-size: 14px;
+      cursor: pointer;
+  
+      input {
+        display: none;
+      }
+  
+      .slider {
+        width: 40px;
+        height: 20px;
+        background-color: #ccc;
+        border-radius: 50px;
+        position: relative;
+        transition: background-color 0.3s ease;
+  
+        &::before {
+          content: "";
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          width: 16px;
+          height: 16px;
+          background-color: white;
+          border-radius: 50%;
+          transition: transform 0.3s ease;
+        }
+      }
+  
+      input:checked + .slider {
+        background-color: #041c4c;
+  
+        &::before {
+          transform: translateX(20px);
+        }
+      }
+  
+      .label-text {
+        flex: 1;
+        color: #1a1a1a;
+      }
+    }
+  }
+  

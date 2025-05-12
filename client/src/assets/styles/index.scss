@@ -1,5 +1,8 @@
 $main-color: #041c4c;
 $main-color-75t: hwb(220 2% 70% / 0.75);
+$main-color-25t: hwb(220 2% 70% / 0.25);
+$main-color-10t: hwb(220 2% 70% / 0.1);
+$background-color: #d9e6ff;
 $hover-color: rgb(219, 160, 77);
 
 * {
@@ -10,7 +13,6 @@ $hover-color: rgb(219, 160, 77);
 }
 
 body {
-  
   main {
     padding-top: 70px;
   }
@@ -22,3 +24,7 @@ body {
 }
 
 @import "../components/NavBar/navBar";
+@import "../components/Register/register";
+@import "../components/Inputs/StandardInputField/standardInputField";
+@import "../components/Buttons/SubmitButton/submitButton";
+@import "../components/Buttons/OnOffCheck/onOffCheck";

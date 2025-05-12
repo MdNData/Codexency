@@ -17,6 +17,7 @@ import authRoute from "./routes/authRoutes.js";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import path from "path";
+import errorHandlerMiddleware from "./middlewares/errorHandlerMiddleware.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -44,6 +45,8 @@ app.use("*", (req, res) => {
 app.use("*", (req, res) => {
   res.status(404);
 });
+
+app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 5101;
 

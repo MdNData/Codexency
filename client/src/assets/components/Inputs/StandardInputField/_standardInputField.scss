@@ -1,0 +1,74 @@
+.standard-input-field {
+    max-width: 350px;
+    margin: auto;
+  
+    label {
+      display: block;
+      margin-bottom: 5px;
+      position: relative;
+      margin-top: 20px;
+  
+      p {
+        font-size: 16px;
+        font-family: Mulish;
+        text-transform: capitalize;
+        margin-bottom: 7px;
+      }
+  
+      // icona lock a sinistra
+      .left-icon {
+        position: absolute;
+        top: 75%;
+        left: 12px;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: $main-color;
+        z-index: 1;
+      }
+  
+      // toggle occhiolino a destra
+      .password-toggle {
+        position: absolute;
+        top: 75%;
+        right: 12px;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: $main-color;
+        cursor: pointer;
+        transition: color 0.2s ease;
+        z-index: 1;
+  
+        &:hover {
+          color: darken($main-color, 10%);
+        }
+      }
+  
+      input {
+        width: 100%;
+        // spazio per icone su entrambi i lati
+        padding: 8px 40px 8px 40px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: Mulish;
+        border: 1px solid rgb(209, 213, 219);
+        outline: none;
+        transition: border-color 0.3s ease, box-shadow 0.2s ease;
+  
+        &:focus {
+          box-shadow: 0 0 3px 3px $main-color-10t;
+        }
+      }
+    }
+  
+    .error-message {
+      font-size: 14px;
+      font-family: Mulish;
+      color: #fff;
+      background-color: #e53935;
+      padding: 6px 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+  }
+  

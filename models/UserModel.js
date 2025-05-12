@@ -40,6 +40,10 @@ const UserSchema = new mongoose.Schema(
       enum: ["admin", "client", "freetier"],
       default: "freetier",
     },
+    marketing: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
