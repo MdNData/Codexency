@@ -7,19 +7,11 @@ export const uploadController = async (req, res) => {
     others = [];
 
   req.files.forEach((file) => {
-    const filePath = file.path;
-
-    if (file.mimetype.startsWith("image/")) {
-      images.push(filePath);
-    } else if (file.mimetype === "application/pdf") {
-      pdfs.push(filePath);
-    } else if (file.mimetype.startsWith("video/")) {
-      videos.push(filePath);
-    } else {
-      // Sposta i file nella cartella "others"
-      const othersPath = path.join("uploads/others", path.basename(filePath));
-      others.push(othersPath);
-    }
+    const relPath = path.relative(process.cwd(), file.path);
+    if (file.mimetype.startsWith("image/")) images.push(relPath);
+    else if (file.mimetype === "application/pdf") pdfs.push(relPath);
+    else if (file.mimetype.startsWith("video/")) videos.push(relPath);
+    else others.push(relPath);
   });
 
   res.status(201).json({

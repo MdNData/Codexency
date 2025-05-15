@@ -41,6 +41,10 @@ export default function FileUploader() {
       <input type="file" multiple onChange={handleFileChange} />{" "}
       {/* upload multipli :contentReference[oaicite:7]{index=7} */}
       <button onClick={handleUpload}>Carica</button>
+      <video
+        src={`https://codexency.onrender.com/files/videos/1.0Curatarea%20instrumentarului.MOV`}
+        controls
+      />
     </div>
   );
 }
