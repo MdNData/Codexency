@@ -11,7 +11,8 @@ import helmet from "helmet";
 import mongoSanitize from "express-mongo-sanitize";
 
 //Import routes
-import authRoute from "./routes/authRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
+import uploadRoutes from "./routes/uploadRoutes.js";
 
 //Path to public
 import { dirname } from "path";
@@ -27,14 +28,15 @@ if (process.env.NODE_ENV === "development") {
 }
 
 app.use(express.static(path.resolve(__dirname, "./client/dist")));
-app.use("/images", express.static(path.resolve(__dirname, "./images")));
+app.use("/files", express.static(path.resolve(__dirname, "./files")));
 app.use(cookieParser());
 app.use(express.json());
 app.use(helmet());
 app.use(mongoSanitize());
 
 //Use routes
-app.use("/api/access", authRoute);
+app.use("/api/access", authRoutes);
+app.use("/api/upload", uploadRoutes);
 
 //Default route
 app.use("*", (req, res) => {
