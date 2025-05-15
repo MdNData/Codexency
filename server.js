@@ -9,6 +9,7 @@ import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
 import mongoSanitize from "express-mongo-sanitize";
+import "./config/ensureDirs.js";
 
 //Import routes
 import authRoutes from "./routes/authRoutes.js";
@@ -28,7 +29,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 app.use(express.static(path.resolve(__dirname, "./client/dist")));
-app.use("/files", express.static(path.resolve(__dirname, "./files")));
+app.use("/files", express.static(path.resolve(process.cwd(), "./files")));
 app.use(cookieParser());
 app.use(express.json());
 app.use(helmet());

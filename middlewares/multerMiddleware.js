@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
     if (file.mimetype.startsWith("application/pdf")) folder = "files/pdfs";
     if (file.mimetype.startsWith("video/")) folder = "files/videos";
 
-    cb(null, folder);
+    cb(null, path.resolve(process.cwd(), folder));
   },
   filename: (req, file, cb) => {
     cb(null, file.originalname);
