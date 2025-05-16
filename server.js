@@ -29,7 +29,10 @@ if (process.env.NODE_ENV === "development") {
 }
 
 app.use(express.static(path.resolve(__dirname, "./client/dist")));
-//app.use("/files", express.static(path.resolve(process.cwd(), "./files")));
+app.use(
+  '/files',
+  express.static(path.join(process.cwd(), 'files'))
+);
 app.use(cookieParser());
 app.use(express.json());
 app.use(helmet());
