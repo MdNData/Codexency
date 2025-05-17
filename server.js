@@ -13,7 +13,7 @@ import mongoSanitize from "express-mongo-sanitize";
 //Import routes
 import authRoutes from "./routes/authRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
-import mediaProxy from "./routes/mediaRoutes.js"; 
+import mediaProxy from "./routes/mediaRoutes.js";
 
 //Path to public
 import { dirname } from "path";
@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === "development") {
 
 app.use(
   cors({
-    origin: "http://localhost:5173", 
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
@@ -39,7 +39,35 @@ app.use(express.static(path.resolve(__dirname, "./client/dist")));
 app.use("/files", express.static(path.resolve(process.cwd(), "./files")));
 app.use(cookieParser());
 app.use(express.json());
-app.use(helmet());
+app.use(
+  helmet({
+    // disable the default CSP so we can define our own
+    contentSecurityPolicy: {
+      useDefaults: false,
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        styleSrc: ["'self'", "'unsafe-inline'"],
+        imgSrc: [
+          "'self'",
+          "data:",
+          `https://${process.env.R2_BUCKET_NAME}.${process.env.CF_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+        ],
+        connectSrc: [
+          "'self'",
+          `https://${process.env.R2_BUCKET_NAME}.${process.env.CF_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+        ],
+        mediaSrc: [
+          "'self'",
+          `https://${process.env.R2_BUCKET_NAME}.${process.env.CF_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+        ],
+        frameSrc: ["'self'"],
+        objectSrc: ["'none'"],
+        baseUri: ["'self'"],
+      },
+    },
+  })
+);
 app.use(mongoSanitize());
 
 //Use routes
