@@ -41,13 +41,18 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   helmet({
-    // disable the default CSP so we can define our own
     contentSecurityPolicy: {
       useDefaults: false,
       directives: {
         defaultSrc: ["'self'"],
         scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-        styleSrc: ["'self'", "'unsafe-inline'"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+        styleSrcElem: [
+          "'self'",
+          "'unsafe-inline'",
+          "https://fonts.googleapis.com",
+        ],
+        fontSrc: ["'self'", "https://fonts.gstatic.com"],
         imgSrc: [
           "'self'",
           "data:",
@@ -56,6 +61,8 @@ app.use(
         connectSrc: [
           "'self'",
           `https://${process.env.R2_BUCKET_NAME}.${process.env.CF_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+          "http://localhost:5173",
+          "http://localhost:5101",
         ],
         mediaSrc: [
           "'self'",
@@ -64,8 +71,11 @@ app.use(
         frameSrc: ["'self'"],
         objectSrc: ["'none'"],
         baseUri: ["'self'"],
+        upgradeInsecureRequests: [],
       },
     },
+    // Disabilitiamo solo la policy che altrimenti bloccherebbe i fetch incrociati
+    crossOriginEmbedderPolicy: false,
   })
 );
 app.use(mongoSanitize());
