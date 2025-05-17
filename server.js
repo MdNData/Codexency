@@ -96,7 +96,7 @@ app.use("/files", express.static(path.resolve(process.cwd(), "./files")));
 
 // Routes
 app.use("/api/access", authRoutes);
-app.use("/api/upload", uploadRoutes);
+app.use("/api/media/upload", uploadRoutes);
 app.use("/media", mediaProxy);
 
 // Default SPA route

@@ -22,7 +22,7 @@ export default function FileUploader() {
     files.forEach((file) => formData.append("files", file));
 
     try {
-      const res = await apiFetch.post("/upload", formData);
+      const res = await apiFetch.post("/media/upload", formData);
       setUploaded(res.data);
     } catch (err) {
       console.error(err);
