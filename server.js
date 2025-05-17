@@ -4,6 +4,7 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 const app = express();
+app.set("trust proxy", 1);
 import morgan from "morgan";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
