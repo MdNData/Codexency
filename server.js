@@ -9,11 +9,11 @@ import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
 import mongoSanitize from "express-mongo-sanitize";
-import "./config/ensureDirs.js";
 
 //Import routes
 import authRoutes from "./routes/authRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
+import mediaProxy from "./routes/mediaRoutes.js"; 
 
 //Path to public
 import { dirname } from "path";
@@ -28,11 +28,15 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-app.use(express.static(path.resolve(__dirname, "./client/dist")));
 app.use(
-  '/files',
-  express.static(path.join(process.cwd(), 'files'))
+  cors({
+    origin: "http://localhost:5173", 
+    credentials: true,
+  })
 );
+
+app.use(express.static(path.resolve(__dirname, "./client/dist")));
+app.use("/files", express.static(path.resolve(process.cwd(), "./files")));
 app.use(cookieParser());
 app.use(express.json());
 app.use(helmet());
@@ -40,7 +44,8 @@ app.use(mongoSanitize());
 
 //Use routes
 app.use("/api/access", authRoutes);
-//app.use("/api/upload", uploadRoutes);
+app.use("/api/upload", uploadRoutes);
+app.use("/media", mediaProxy);
 
 //Default route
 app.use("*", (req, res) => {

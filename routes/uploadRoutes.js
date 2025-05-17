@@ -1,8 +1,7 @@
 import { Router } from "express";
-const router = Router();
 import { uploadController } from "../controllers/uploadController.js";
-import { uploadMiddleware } from "../middlewares/multerMiddleware.js";
+const router = Router();
 
-router.post("/", uploadMiddleware.any(), uploadController);
+router.post("/", uploadController);
 
 export default router;

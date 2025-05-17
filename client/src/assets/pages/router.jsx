@@ -25,6 +25,10 @@ export const router = createBrowserRouter([
         ),
         action: registerAction,
       },
+      {
+        path: "uploader",
+        element: <FileUploader />,
+      },
     ],
   },
 ]);

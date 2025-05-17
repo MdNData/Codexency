@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiFetch = axios.create({
-  baseURL: "/api",
+  baseURL: "http://localhost:5101/api",
   withCredentials: true,
 });
 
