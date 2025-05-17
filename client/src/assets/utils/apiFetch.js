@@ -1,7 +1,10 @@
+// utils/apiFetch.js
 import axios from "axios";
 
+const base = import.meta.env.VITE_API_URL || "/api";
+
 const apiFetch = axios.create({
-  baseURL: "http://localhost:5101/api",
+  baseURL: base,
   withCredentials: true,
 });
 
