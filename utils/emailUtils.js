@@ -17,7 +17,7 @@ const logoUrl =
   "https://codexency.onrender.com/images/Codexency-logo-full.webp";
 
 export const sendWelcomeEmail = async (userEmail, userName) => {
-  const loginUrl = process.env.APP_LOGIN_URL;
+  const loginUrl = process.env.APP_LOGIN_URL + "/login";
 
   const mailOptions = {
     from: '"Codexency" <no-reply@codexency.com> ',

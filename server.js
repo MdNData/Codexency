@@ -13,6 +13,7 @@ import mongoSanitize from "express-mongo-sanitize";
 
 //Import routes
 import authRoutes from "./routes/authRoutes.js";
+import uploadRoutes from "./routes/uploadRoutes.js";
 
 //Path to public
 import { dirname } from "path";
@@ -35,6 +36,7 @@ app.use(mongoSanitize());
 
 //Use routes
 app.use("/api/access", authRoutes);
+app.use("/api/upload", uploadRoutes);
 
 //Default route
 app.use("*", (req, res) => {

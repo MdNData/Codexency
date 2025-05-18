@@ -5,6 +5,7 @@ import Register from "./Register";
 
 //actions and loaders
 import { action as registerAction } from "./Register";
+import Uploader from "../components/OnTesting/Uploader";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "uploader",
+        element: <Uploader />,
       },
     ],
   },
