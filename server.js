@@ -55,7 +55,7 @@ app.use(mongoSanitize());
 
 //Use routes
 app.use("/api/access", authRoutes);
-app.use("/api/files", uploadRoutes);
+//app.use("/api/files", uploadRoutes);
 
 //Default route
 app.use("*", (req, res) => {
