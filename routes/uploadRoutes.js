@@ -2,7 +2,7 @@ import { Router } from "express";
 const router = Router();
 import rateLimiter from "express-rate-limit";
 import { upload } from "../utils/multerUploader.js";
-import { uploadController } from "../controllers/uploadController.js";
+import { loadFromUrl, uploadController, uploadToUrl } from "../controllers/uploadController.js";
 
 const apiLimiter = rateLimiter({
   windowMs: 15 * 60 * 1000,
@@ -13,5 +13,7 @@ const apiLimiter = rateLimiter({
 });
 
 router.post("/", upload.single("file"), uploadController);
+router.post("/upload-url", uploadToUrl);
+router.post("/load-url", loadFromUrl);
 
 export default router;
